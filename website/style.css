@@ -5,7 +5,7 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(20px, auto);
     /* grid-template-columns:  */
     height:100vh;
     background: #f23557;
@@ -17,27 +17,33 @@ body{
 }
 
 .holder{
-
+    font-size: larger;
 }
 
 .entry{
-    background: rgba(59, 74, 107, .4);
+    background: rgba(75, 92, 133, 0.4);
 }
 
 #entryHolder{
-
+    
 }
 
 #date{
-
+    font-size:medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: beige;
 }
 
 #temp{
-
+    font-size:medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: beige;
 }
 
 #content{
-
+    font-size:medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: beige;
 }
 
 .headline {
@@ -83,6 +89,7 @@ textarea{
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    /* display: none; */
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,

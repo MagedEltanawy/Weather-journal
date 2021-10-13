@@ -16,7 +16,6 @@ document.querySelector("#generate").addEventListener('click',async ()=>{
         const allData = await fetch(`${baseURL}zip=${zip}&units=metric&appid=${weatherApiKey}`);
         const d= await allData.json();
         const temp =d.main.temp;
-        console.log(temp);
         const data={date:newDate,temperature:temp,content:feeling};
         const recieved=await fetch('/send',{
             method: 'POST', 
@@ -26,7 +25,17 @@ document.querySelector("#generate").addEventListener('click',async ()=>{
             },
             body: JSON.stringify(data),
         });
+        console.log(await recieved.json());
+        updateUI(data);
     } catch (err) {
         console.log('error has done -> ' +err);
+        const recieved=await fetch('/data');
+        const d=await recieved.json();
+        updateUI(d);
     }});
 
+function updateUI(obj){
+    document.querySelector('#date').innerHTML=`The date is :${obj.date}`;
+    document.querySelector('#temp').innerHTML=`Temperature is ${obj.temperature} celisius degree`;
+    document.querySelector('#content').innerHTML=`The feelings is :${obj.content} `;
+}
